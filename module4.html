@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">JavaScript Basics </h1>
+
+    <div class="section">
+        <h3>
+            <li>Overview of JavaScript and its uses</li>
+        </h3>
+
+        <h4>JavaScript: The Web's Scripting Language</h4>
+        <p>JavaScript (JS) is a high-level, interpreted programming language that has become the cornerstone of web development. It allows you to create dynamic and interactive webpages, adding functionality that goes beyond static HTML and CSS. Here's a breakdown of its key features and uses:</p>
+
+        
+        <ul>
+            <h4>Core Characteristics:</h4>
+            <li><span>Interpreted:</span> JavaScript code is executed line by line by an interpreter, eliminating the need for separate compilation steps.</li>
+            <li><span>High-Level:</span> It uses a syntax similar to natural languages, making it easier to learn and read compared to lower-level languages.</li>
+            <li><span>Dynamically Typed:</span> Data types are not explicitly declared, allowing for flexibility but requiring careful coding practices.</li>
+            <li><span>Client-side and Server-side</span>: JavaScript can be used on both the client-side (web browser) and server-side (web server) using frameworks like Node.js.</li>
+            
+            <h4>What can you do with JavaScript?</h4>
+            <li><span>Create Dynamic Webpages:</span> JavaScript allows you to update content, validate forms, respond to user interactions (clicks, scrolls, etc.), and create animations or interactive elements. Imagine a webpage that changes color when you hover over a button, or a form that validates your email address before submission – that's JavaScript in action!</li>
+            <li><span>Enhance User Experience:</span> By adding interactivity and dynamic content, JavaScript helps create engaging and user-friendly webpages.</li>
+            <li><span>Build Single-Page Applications (SPAs):</span> Modern web applications often rely heavily on JavaScript to provide a seamless user experience without full page reloads.</li>
+            <li><span>Develop Web Games:</span> JavaScript, combined with libraries like WebGL, can be used to create interactive and engaging web games.</li>
+            <li><span>Work with APIs (Application Programming Interfaces): </span>JavaScript is essential for fetching data from APIs and integrating external services into web applications.</li>
+
+            <h4>Beyond Web Development:</h4>
+            <li><span>Desktop Applications:</span> Frameworks like Electron allow you to build desktop applications using web technologies like JavaScript, HTML, and CSS.</li>
+            <li><span>Mobile App Development:</span> With frameworks like React Native, you can leverage JavaScript skills to create mobile applications for iOS and Android.</li>
+            <li><span>Internet of Things (IoT):</span> JavaScript is increasingly being used to program devices and sensors within the IoT ecosystem.</li>
+        </ul>
+
+        <h4>Learning JavaScript:</h4>
+        <p>JavaScript is a popular and in-demand skill for web development. Numerous online resources, tutorials, and bootcamps can help you get started on your JavaScript learning journey. As you progress, you can explore various JavaScript frameworks and libraries that provide pre-built functionality and simplify complex tasks.</p>
+        <p>In essence, JavaScript is a powerful and versatile tool that has revolutionized the web. By understanding its core concepts and exploring its various applications, you can unlock a world of possibilities in web development and beyond.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Object Orientation and JavaScript</li>
+        </h3>
+
+        <h4>Here's a breakdown of object orientation and its relationship with JavaScript:</h4>
+
+        <h4>Object-Oriented Programming (OOP):</h4>
+        <p>OOP is a programming paradigm that revolves around objects. These objects encapsulate data (properties) and the actions that can be performed on that data (methods). It promotes code reusability, modularity, and maintainability.</p>
+
+        <h4>Traditional OOP Languages (Class-based):</h4>
+        <p>Many OOP languages like Java, C++, or Python rely on classes. A class is a blueprint that defines the properties and methods shared by all objects of that class. You create instances (objects) of a class to work with specific data.</p>
+
+        <h4>JavaScript and OOP:</h4>
+        <p>JavaScript itself isn't a purely class-based OOP language. However, it supports prototypal inheritance, a different approach to object-oriented concepts.</p>
+
+        <ul>
+            <h4>Prototypal Inheritance in JavaScript:</h4>
+            <li><span>Prototypes:</span> Every object in JavaScript has a prototype, which is another object that acts as a blueprint. Objects inherit properties and methods from their prototypes.</li>
+            <li><span>Prototypal Chain:</span> When you try to access a property or method on an object, JavaScript searches the object itself, then its prototype, and then the prototype's prototype, and so on, until the property or method is found.</li>
+            <li><span>Constructor Functions:</span> While JavaScript doesn't have classes, you can use constructor functions to create objects with similar properties and methods. These functions act like blueprints for creating objects.</li>
+
+            <h4>Benefits of Prototypal Inheritance:</h4>
+            <li><span>Flexibility:</span> Prototypal inheritance allows for more dynamic object creation and modification compared to traditional classes.</li>
+            <li><span>Lightweight:</span> JavaScript's approach is considered lighter weight compared to class-based inheritance.</li>
+
+            <h4>Drawbacks of Prototypal Inheritance:</h4>
+            <li><span>Complexity:</span> Understanding and maintaining the prototype chain can become complex in large projects compared to a clear class hierarchy.</li>
+            <li><span>Lack of Features:</span> JavaScript lacks some features commonly found in class-based OOP languages like private properties or method overriding.</li>
+
+            <h4>Using OOP Concepts in JavaScript:</h4>
+            <p>Even though JavaScript isn't strictly class-based, you can leverage OOP principles like:</p>
+
+            <li><span>Encapsulation: </span>Group data and related functions within objects to control access and maintain data integrity.</li>
+            <li><span>Inheritance:</span> Create new objects that inherit properties and methods from existing ones, promoting code reuse.</li>
+            <li><span>Polymorphism:</span> Define methods with the same name but different behavior based on the object type, allowing for flexible functionality.</li>
+        </ul>
+
+        <h4>JavaScript Frameworks and Libraries:</h4>
+        <p>Many popular JavaScript frameworks like React or Angular heavily utilize object-oriented concepts and provide their own abstractions on top of JavaScript's core functionalities. These frameworks can simplify object-oriented development in JavaScript.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Primitives, Operations, and Expressions</li>
+        </h3>
+
+        <p>In JavaScript, the foundation of working with data lies in primitives, operations, and expressions. Let's break down these essential concepts:</p>
+
+        <h4>1. Primitives: The Building Blocks</h4>
+        <p>Primitives are the fundamental data types that represent basic values in JavaScript. These include:</p>
+        <ul>
+            <li><span>Numbers:</span> Represent numeric values, like integers (whole numbers) or decimals (numbers with a decimal point).</li>
+            <li><span>Strings:</span> Represent sequences of characters, enclosed in single or double quotes.</li>
+            <li><span>Booleans:</span> Represent logical values, either true or false.</li>
+            <li><span>Undefined:</span> Indicates a variable has been declared but not yet assigned a value.</li>
+            <li><span>Null:</span> Represents the intentional absence of a value.</li>
+        </ul>
+
+        <h4>2. Operations: Performing Actions on Primitives</h4>
+        <p>JavaScript provides various operators to perform actions on primitives:</p>
+
+        <ul>
+            <li><span>Arithmetic Operators:</span> Perform mathematical calculations like addition (+), subtraction (-), multiplication (*), division (/), and modulus (%) for remainder after division.</li>
+            <li><span>Comparison Operators:</span> Compare values and return true or false based on conditions (== for equality, != for inequality, <, >, <=, >=).
+                Logical Operators: Combine Boolean expressions using AND (&&), OR (||), and NOT (!).</li>
+            <li><span>Assignment Operators:</span> Assign values to variables (=, +=, -=, *=, /=, etc. for combined assignment).</li>
+        </ul>
+
+        <h4>3. Expressions: Combining Primitives and Operations</h4>
+        <p>Expressions are combinations of primitives, operators, variables, and function calls that evaluate to a single value. They are the heart of creating instructions and calculations in your JavaScript code.</p>
+
+        <p>Understanding these concepts is crucial for writing effective JavaScript code. By mastering primitives, operations, and expressions, you can manipulate data, make decisions, and perform calculations within your programs.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Screen output and Keyboard input</li>
+        </h3>
+
+        <p>In JavaScript, interacting with the user for input and output is essential for creating dynamic and responsive web pages. Here's a breakdown of the common methods for handling screen output and keyboard input:</p>
+
+        <ul>
+            <h4>Screen Output:</h4>
+            <li><span>Alert:</span> The alert() method displays a modal dialog box with a message and an OK button. It's a simple way to display a message to the user, but can be disruptive for complex interactions. </li>
+            <li><span>Console.log:</span> This method writes a message to the browser's developer console. It's primarily used for debugging purposes and isn't visible to the user on a normal webpage.</li>
+            <li><span>Document.write:</span> This method writes content directly to the HTML document. While it can be used for output, it's generally discouraged due to potential issues with modifying the DOM (Document Object Model) structure after the page has loaded. More robust methods are preferred for modern web development.</li>
+            <li><span>DOM Manipulation:</span> The most recommended approach for screen output involves manipulating the HTML elements on the webpage using the Document Object Model (DOM). You can select elements using methods like document.getElementById or document.querySelector and then modify their content using properties like innerHTML or textContent. This allows for more dynamic and flexible output control.</li>
+
+            <h4>Keyboard Input:</h4>
+
+            <li><span>Prompt: </span>The prompt() method displays a dialog box with a message and an input field. The user can enter text, and the method returns the entered value as a string. It's useful for collecting simple user input, but can feel intrusive for longer inputs.</li>
+            <li><span>Form Elements:</span> HTML forms provide various input elements like text fields, password fields, checkboxes, radio buttons, and textareas. JavaScript can access the values entered by the user in these form elements using the DOM and event listeners. Event listeners like onchange or onsubmit can be attached to form elements to capture user input when the element's state changes (e.g., text is entered in a field) or when the form is submitted. This is the most common and versatile approach for collecting user input in web applications.</li>
+
+            <h4>Choosing the Right Method:</h4>
+            <li>For simple messages or debugging: alert() or console.log might suffice.</li>
+            <li>For user input: Use prompt() for basic text input, or leverage HTML forms and JavaScript event listeners for more complex scenarios.</li>
+            <li>For dynamic and structured output: DOM manipulation is the preferred approach for modern web development.</li>
+        </ul>
+        <p>By effectively using these methods, you can create interactive web pages that exchange information with users, making your applications more engaging and user-friendly.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Control statements</li>
+        </h3>
+        <p>In JavaScript, control statements dictate the flow of execution within your program. They allow you to conditionally execute code blocks based on certain conditions or repeat code a specific number of times. Here's a breakdown of the essential control statements:</p>
+
+        <h4>1. Conditional Statements (if...else):</h4>
+        <p>The if...else statement is the cornerstone of conditional execution. It checks a condition and executes a block of code if the condition is true, and optionally provides an alternative block to execute if the condition is false.</p>
+        <pre>
+            <code>
+                if (age &gt;= 18) {
+                    console.log(&quot;You are eligible to vote.&quot;);
+                } else {
+                    console.log(&quot;You are not eligible to vote.&quot;);
+                }
+            </code>
+        </pre>
+
+        <h4>2. if...else if...else:</h4>
+        <p>This extension allows you to check multiple conditions and execute corresponding code blocks. The else if statements provide additional conditional checks after the initial if statement. Only the first condition that evaluates to true will have its associated code block executed. An optional final else block can be used to define code to execute if none of the conditions are true.</p>
+        <pre>
+            <code>
+                let grade = &quot;A&quot;;
+        
+                if (grade === &quot;A&quot;) {
+                    console.log(&quot;Excellent work!&quot;);
+                } else if (grade === &quot;B&quot;) {
+                    console.log(&quot;Great job!&quot;);
+                } else {
+                    console.log(&quot;Keep practicing!&quot;);
+                }
+            </code>
+        </pre>
+
+        <h4>3. Switch Statement:</h4>
+        <p>The switch statement provides a multi-way branching mechanism based on the value of an expression. It checks the expression against different cases and executes the associated code block if there's a match. A default case can be used to handle situations where none of the other cases match.</p>
+        <pre>
+            <code>
+                let day = &quot;Tuesday&quot;;
+        
+                switch (day) {
+                    case &quot;Monday&quot;:
+                        console.log(&quot;Start of the week!&quot;);
+                        break;
+                    case &quot;Tuesday&quot;:
+                    case &quot;Wednesday&quot;:
+                    case &quot;Thursday&quot;:
+                        console.log(&quot;Midweek grind!&quot;);
+                        break;
+                    case &quot;Friday&quot;:
+                        console.log(&quot;TGIF!&quot;);
+                        break;
+                    default:
+                        console.log(&quot;Enjoy the weekend!&quot;);
+                }
+            </code>
+        </pre>
+
+        <h4>4. Looping Statements:</h4>
+        <p>Loops allow you to execute a block of code repeatedly until a certain condition is met. Here are common looping statements:</p>
+        <p>for loop: Used for iterating a specific number of times, typically with a counter variable.</p>
+        <pre>
+            <code>
+                for (let i = 0; i &lt; 5; i++) {
+                    console.log(&quot;Iteration&quot;, i);
+                }
+            </code>
+        </pre>
+
+        <h4>while loop:</h4>
+        <p>while loop: Continues looping as long as a specified condition remains true.</p>
+        <pre>
+            <code>
+                let count = 0;
+                while (count &lt; 3) {
+                    console.log(&quot;Counting...&quot;, count);
+                    count++;
+                }
+            </code>
+        </pre>
+
+        <h4>do...while loop:</h4>
+        <p>do...while loop: Similar to while, but the code block is always executed at least once before checking the condition.</p>
+        <pre>
+            <code>
+                let count = 0;
+                do {
+                    console.log(&quot;Counting...&quot;, count);
+                    count++;
+                } while (count &lt; 3);
+            </code>
+        </pre>
+
+        <h4>Choosing the Right Control Statement:</h4>
+        <ul>
+            <li>Use if...else for simple true/false decisions.</li>
+            <li>Use if...else if...else for multiple conditional checks.</li>
+            <li>Use switch for multi-way branching based on a single value.</li>
+            <li>Use for loops for a known number of iterations.</li>
+            <li>Use while loops when the number of iterations is unknown but depends on a condition.</li>
+            <li>Use do...while loops when you want the code block to execute at least once.</li>
+        </ul>
+
+        <p>By mastering control statements, you can write JavaScript code that makes decisions, repeats tasks, and reacts to different conditions, creating more dynamic and interactive programs.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Object creation and modification</li>
+        </h3>
+
+        <p>In JavaScript, objects are fundamental building blocks for storing and organizing data. They provide a way to group related properties (data) and methods (functions) that operate on that data. Here's a breakdown of how you create and modify objects in JavaScript:</p>
+
+        <h4>1. Object Literal Notation:</h4>
+        <p>The most common way to create objects is using object literal notation, which involves curly braces {} to enclose key-value pairs. Keys are typically strings representing property names, and values can be any valid JavaScript data type (numbers, strings, booleans, arrays, even other objects!).</p>
+        <pre>
+            <code>
+                let person = {
+                    firstName: &quot;Alice&quot;,
+                    lastName: &quot;Smith&quot;,
+                    age: 30,
+                    greet: function() {
+                        console.log(&quot;Hello, my name is &quot; + this.firstName + &quot; &quot; + this.lastName);
+                    }
+                };
+            </code>
+        </pre>
+
+        <h4>2. The new Keyword and Constructor Functions (Optional):</h4>
+        <p>While object literals are simpler, JavaScript also supports creating objects using constructor functions. These functions act like blueprints to define the properties and methods that new objects will inherit. You use the new keyword to call the constructor function and create a new object instance.</p>
+        <pre>
+            <code>
+                function Person(firstName, lastName, age) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.age = age;
+                    this.greet = function() {
+                        console.log(&quot;Hello, my name is &quot; + this.firstName + &quot; &quot; + this.lastName);
+                    };
+                }
+        
+                let person1 = new Person(&quot;Bob&quot;, &quot;Jones&quot;, 25);
+            </code>
+        </pre>
+
+        <h4>3. Modifying Object Properties:</h4>
+        <p>Once you have an object, you can access and modify its properties using dot notation (object.propertyName) or bracket notation (object["propertyName"]).</p>
+        <pre>
+            <code>
+                person.age = 31; // Modifying a property using dot notation
+                person[&quot;isEmployee&quot;] = true; // Adding a new property using bracket notation
+            </code>
+        </pre>
+
+        <h4>4. Modifying Object Methods:</h4>
+        <p>You can modify the functionality of an existing method within an object by reassigning the function associated with the property key.</p>
+        <pre>
+            <code>
+                person.greet = function() {
+                    console.log(&quot;Hi there, I'm &quot; + this.firstName + &quot;!&quot;);
+                };
+        
+                person.greet(); // Output: Hi there, I'm Alice!
+            </code>
+        </pre>
+
+        <h4>5. Adding or Removing Properties:</h4>
+        <p>You can dynamically add new properties to an object using dot or bracket notation, assigning a value to a new key. Similarly, you can delete properties using the delete keyword followed by the property name in dot or bracket notation.</p>
+
+        <h4>Key Points:</h4>
+        <ul>
+            <li>Object literal notation is the most common and straightforward way to create objects.</li>
+            <li>Constructor functions provide a way to create multiple objects with similar properties and methods.</li>
+            <li>Be mindful of using this within object methods to refer to the current object instance.</li>
+            <li>Object properties and methods are dynamic, allowing you to modify them after creating the object.</li>
+        </ul>
+        <p>By understanding these concepts, you can effectively create and manipulate objects in JavaScript, forming the foundation for building complex and data-driven applications.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Arrays</li>
+        </h3>
+
+        <p>In JavaScript, arrays are a powerful data structure used to store ordered collections of items. They are similar to shopping lists where you can store multiple items, but in JavaScript, these items can be of any data type (numbers, strings, booleans, objects, even other arrays!).</p>
+
+        <h4>Creating Arrays:</h4>
+
+        <p>There are two main ways to create arrays:</p>
+
+        <ul>
+
+            <li><span>1.Array Literal Notation:</span> This is the most common and straightforward way. You use square brackets [] to enclose a comma-separated list of elements.</li>
+            <pre>
+                <code>
+                    let fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;];
+                    let numbers = [1, 2, 3, 4, 5];
+                </code>
+            </pre>
+    
+            <li><span>2.The new Array()</span> Constructor (Less Common): While less frequently used, you can also create arrays using the new Array() constructor. However, this method is generally less preferred than array literal notation for simple arrays.</li>
+            <pre>
+                <code>
+                    let emptyArray = new Array();  // Creates an empty array
+                    let prefilledArray = new Array(3);  // Creates an array with 3 empty slots (index 0, 1, 2)
+                </code>
+            </pre>
+
+            <h4>Accessing and Modifying Array Elements:</h4>
+            <li><span>By Index:</span> You can access and modify elements in an array using their numerical index within square brackets. The first element has index 0, the second element has index 1, and so on.</li>
+            <pre>
+                <code>
+                    fruits[0] = &quot;mango&quot;; // Replaces the first element with &quot;mango&quot;
+                    console.log(fruits[2]); // Outputs &quot;orange&quot; (assuming no modification)
+                </code>
+            </pre>
+
+            <li><span>Beware of Out-of-Bounds Access:</span> Trying to access elements outside the array's bounds (negative indexes or indexes exceeding the array length) can lead to errors.</li>
+
+            <h4>Array Properties and Methods:</h4>
+
+            <li><span>Length:</span> The length property of an array represents the number of elements it contains. It's a dynamic property, meaning it adjusts as you add or remove elements.</li>
+            <pre>
+                <code>
+                    console.log(fruits.length); // Outputs 3 (assuming no modification)
+                </code>
+            </pre>
+
+            <h4><span>Common Array Methods: </span> JavaScript provides various built-in methods for working with arrays. Here are some essential ones:</h4>
+            <li><span>push(item):</span> Adds a new element to the end of the array.</li>
+            <li><span>pop():</span> Removes the last element from the array and returns it.</li>
+            <li><span>unshift(item):</span> Adds a new element to the beginning of the array.</li>
+            <li><span>shift():</span> Removes the first element from the array and returns it.</li>
+            <li><span>slice(start, end):</span> Extracts a section of the array and returns a new array containing the extracted elements.</li>
+        </ul>
+
+        
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Functions</li>
+        </h3>
+
+        <p>In JavaScript, functions are reusable blocks of code that perform specific tasks. They are essential for building modular, organized, and maintainable programs. Here's a breakdown of functions in JavaScript:</p>
+
+        <h4>1. Function Definition:</h4>
+        <p>You define a function using the function keyword followed by a name (identifier), parentheses to hold parameters (optional), and curly braces {} to enclose the function body containing the code to be executed.</p>
+        <pre>
+            <code>
+                function greet(name) {
+                    console.log("Hello, " + name + "!");
+                }
+            </code>
+        </pre>
+
+        <h4>2. Parameters and Arguments:</h4>
+        <ul>
+            <li><span>Parameters:</span> These are placeholders listed within the function's parentheses that act like variables to receive values when the function is called.</li>
+            <li><span>Arguments:</span> When you call the function, you provide actual values passed within parentheses that correspond to the parameters. These arguments are then assigned to the parameters within the function body.</li>
+        </ul>
+        <pre>
+            <code>
+                greet("Alice"); // "Alice" is the argument passed to the parameter 'name'
+            </code>
+        </pre>
+
+        <h4>3. Function Invocation (Calling a Function):</h4>
+        <p>
+            You execute a function's code by calling its name followed by parentheses, which can include arguments if the function requires them.
+
+        </p>
+        <pre>
+            <code>
+                greet("Bob"); // This calls the greet function with the argument "Bob"
+            </code>
+        </pre>
+
+        <h4>4. Function Return Values (Optional):</h4>
+        <ul>
+            <li>A function can optionally return a value using the return keyword. The returned value becomes the output of the function call.</li>
+            <li>If no return statement is explicitly mentioned, the function returns undefined by default.</li>
+        </ul>
+        <pre>
+            <code>
+                function sum(x, y) {
+                    return x + y;
+                }
+        
+                let result = sum(5, 3); // result will be 8 (5 + 3)
+                console.log(result);
+            </code>
+        </pre>
+
+        <h4>5. Function Scope:</h4>
+        <ul>
+            <li>Variables defined within a function are local to that function and cannot be accessed directly outside of it. This helps prevent naming conflicts and promotes code organization.
+            </li>
+
+            <li>You can access global variables (declared outside any function) from within a function.</li>
+        </ul>
+        <p>In essence, functions are the workhorses of JavaScript programming. By mastering function definitions, parameters, return values, and scope, you can write more efficient, organized, and maintainable JavaScript code.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Errors in Scripts</li>
+        </h3>
+
+        <p>Errors in scripts can be a real headache for developers. Here's a breakdown of common errors you might encounter in JavaScript and some tips for troubleshooting them:</p>
+
+        <ul>
+            <h4>Types of Errors:</h4>
+            <li><span>Syntax Errors:</span> These are the most basic errors and occur when your code violates the grammatical rules of JavaScript. Examples include missing semicolons, mismatched parentheses, or typos in keywords.</li>
+            <pre>
+                <code>
+                    // Syntax Error: Missing semicolon
+                    function greet(name) {
+                        console.log("Hello", name);  // Missing semicolon here
+                    }
+                </code>
+            </pre>
+
+            <li><span>Runtime Errors:</span> These errors occur during the execution of your code, often due to issues like trying to access a non-existent variable, dividing by zero, or type mismatches.</li>
+            <pre>
+                <code>
+                    // Runtime Error: Trying to access a non-existent variable
+                    console.log(age); // 'age' is not defined yet
+                </code>
+            </pre>
+
+            <li><span>Logical Errors:</span> These errors are the trickiest to identify because the code syntax is correct, but it produces unintended results due to flaws in the program logic. They might involve incorrect calculations, misunderstandings of how JavaScript works, or bugs in your algorithms.</li>
+            <pre>
+                <code>
+                    // Logical Error: Incorrect calculation of area
+                    function calculateArea(length, width) {
+                        return lenght * width; // Should be length * width
+                    }
+                </code>
+            </pre>
+            
+        </ul>
+    </div>
+</body>
+</html>

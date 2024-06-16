@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="main-title">Cascading Style Sheets </h1>
+
+    <div class="section">
+        <h3>
+            <li>Level of style sheets, style specification formats</li>
+        </h3>
+
+        <p>Cascading Style Sheets (CSS) are the magic behind the look and feel of modern webpages. They separate the
+            presentation (styles) from the content (HTML), making websites more manageable and visually appealing.</p>
+
+        <h4>Levels of Style Incorporation:</h4>
+
+        <h5>There are three main ways to include CSS styles in your HTML:</h5>
+
+        <ul>
+            <li><span>Inline Styles:</span> Offer precise control, but can clutter code. Styles are applied directly to
+                elements using the style attribute within the HTML tag itself.</li>
+
+            <li>Example:</li>
+            <pre>
+                <code>
+                    &lt;h1 style=&quot;color: blue; font-size: 1.5em&quot;&gt;This is a heading&lt;/h1&gt;
+                </code>
+            </pre>
+
+            <li>
+                <span>Internal Styles:</span> Keep styles separate from content but limited to one HTML file. Defined
+                within the &lt;style&gt; tag in the &lt;head&gt; section of your HTML.
+            </li>
+            <li>Example:</li>
+            <pre>
+                <code>
+                    &lt;head&gt;
+                        &lt;style&gt;
+                            h1 {
+                                color: blue;
+                                font-size: 1.5em;
+                            }
+                        &lt;/style&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;This is a heading&lt;/h1&gt;
+                    &lt;/body&gt;
+                </code>
+            </pre>
+            <li><span>External Styles (Most Common):</span> Promote reusability and maintainability across multiple
+                webpages. Styles are defined in a separate CSS file (.css extension) linked to the HTML document using
+                the &lt;link&gt; tag in the &lt;head&gt; section.</li>
+            <li>Example (HTML):</li>
+            <pre>
+                <code>
+                    &lt;head&gt;
+                        &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+                    &lt;/head&gt;
+                </code>
+            </pre>
+            <li>Example (styles.css):</li>
+            <pre>
+                <code>
+                    h1 {
+                        color: blue;
+                        font-size: 1.5em;
+                    }
+                </code>
+            </pre>
+
+        </ul>
+
+        <h4>Specifying Styles with CSS:</h4>
+
+        <p>Within each style sheet (inline, internal, or external), CSS uses a specific format to define styles:</p>
+
+        <ul>
+            <li><span>Selectors:</span> Act like targets, identifying the HTML elements to style. They can be by tag
+                name (e.g., h1), class (e.g., .special), ID (e.g., #unique), or a combination.</li>
+
+            <li><span>Properties:</span> Specify the visual aspects you want to control, like color, font-size,
+                background-color, padding, and many more.</li>
+
+            <li><span>Values:</span> Define the specific settings for each property, like a color name (red), a font
+                size (16px), or a measurement (10em).</li>
+        </ul>
+
+        <h4>Combining Selectors, Properties, and Values:</h4>
+
+        <p>Imagine selectors as paint brushes targeting elements, properties as the paint colors, and values as the
+            specific shades. You combine them to create style rules. Each rule defines how a group of elements (selected
+            by selectors) should be styled with particular properties and values.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Selector Forms - Simple, Class, Generic, id, Contextual, Pseudo, Universal</li>
+        </h3>
+
+        <p>Here's a breakdown of different CSS selector forms:</p>
+
+
+        <h4>Targeting Elements with CSS Selectors:</h4>
+
+        <p>CSS selectors are the foundation for applying styles to specific elements in your HTML document. They act
+            like instructions for the browser, pinpointing which elements should be affected by the CSS styles you
+            define.</p>
+
+        <h4>Common Selector Forms:</h4>
+
+        <ul>
+            <li><span>Simple Selector (Element Type):</span> Targets elements by their HTML tag name.
+                Example: h1 { /* styles for h1 elements */ }
+            </li>
+
+            <li><span>Class Selector: </span>Targets elements with a specific CSS class applied. Classes are defined
+                within the HTML element using the class attribute.
+                Example: &lt;p class="special"&gt;This paragraph has a special style.&lt;/p&gt; .special { /* styles for
+                elements with the "special" class */ }
+            </li>
+
+            <li><span>ID Selector:</span> Targets a unique element by its ID. IDs must be unique within a document and
+                are assigned using the id attribute in HTML.
+                Example: &lt;h1 id="main-heading"&gt;This is the main heading&lt;/h1&gt; #main-heading { /* styles for
+                the element with the ID "main-heading" */ }</li>
+
+            <li><span>Universal Selector (*):</span> Selects all elements on the page (use with caution as it can
+                override other styles).
+                Example: * { color: red; } /* Makes all elements red (not recommended) */</li>
+
+            <li><span>Contextual Selectors: </span>Target elements based on their position within the HTML structure.
+                They involve combining different selector types.
+                Example: nav p { /* styles for paragraphs within the navigation section */ }
+
+            </li>
+
+            <li><span>Pseudo-Classes:</span> Apply styles based on the element's state or behavior. These don't involve
+                a separate class but use colons (:) after the selector.
+                Example: a:hover { /* styles for links when hovered over */ } (Many pseudo-classes exist for various
+                states like focus, active, etc.)</li>
+
+
+            <li><span>Pseudo-Elements:</span> Target specific parts of an element, like adding content before or after
+                it. They also use colons (:) after the selector but target specific parts like ::before or ::after.
+                Example: h1::before { content: "Welcome to "; } (Adds "Welcome to " before all h1 elements)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Property-value forms:</li>
+        </h3>
+
+        <p>Property-value forms in CSS define how you specify the visual characteristics of an element using CSS
+            properties and their corresponding values. It's like creating a recipe for styling your webpage elements.
+        </p>
+
+        <h4>Ingredients for Styling:</h4>
+
+        <h5>1. CSS Properties: These act like the main ingredients in your styling recipe. They represent the specific
+            visual aspects you want to control, such as:</h5>
+
+        <ul>
+            <li>color: Font color of the element's text.</li>
+            <li>font-size: Size of the element's text.</li>
+            <li>background-color: Background color behind the element's content.</li>
+            <li>margin: Spacing around the element's content.</li>
+            <li>padding: Spacing between the element's border and its content.</li>
+        </ul>
+
+        <h5>2.Values: These are the specific settings or measurements you assign to the properties, acting like the
+            quantities of ingredients in your recipe. Values can take different forms:</h5>
+
+        <ul>
+            <li>Keywords: Predefined words like red, blue, bold, italic for common styles.</li>
+            <li>Lengths: Sizes specified in units like pixels (px), centimeters (cm), or ems (em).</li>
+            <li>Percentages (%): Values relative to another element's size or the viewport.</li>
+            <li>Hexadecimal Codes (# followed by color code): Represent specific colors using a combination of letters
+                and numbers (e.g., #ff0000 for red).</li>
+            <li>URLs: References to image files for backgrounds or other visual elements.</li>
+        </ul>
+
+        <h4>Putting it Together:</h4>
+
+        <p>Properties and values are combined to create property-value pairs. These pairs essentially define how a
+            specific property should be styled.</p>
+
+        <h5>Example:</h5>
+        <pre>
+            <code>
+                h1 {
+                    color: #333;  /* Property: color, Value: Hex code for dark gray */
+                    font-size: 1.8em;  /* Property: font-size, Value: Size relative to the font size of the parent element */
+                }
+            </code>
+        </pre>
+
+    </div>
+
+    <div class=" section">
+        <h3>
+            <li>Font Properties:</li>
+        </h3>
+
+        <p>In CSS, font properties allow you to control the appearance of text on your webpage. They act like
+            fine-tuning knobs for the typography, giving you precise control over how your text is displayed. Here's a
+            breakdown of some key font properties:</p>
+
+        <h4>Common Font Properties:</h4>
+
+        <ul>
+            <li><span>font-family:</span> This property defines the actual typeface used for the text. You can specify a comma-separated list of font families, with the browser choosing the first available option from the list.
+                Example: font-family: Arial, sans-serif; /* Arial is preferred, if not available, a generic sans-serif font will be used */
+            </li>
+
+            <li><span>font-size:</span> This property specifies the size of the text. Values can be in pixels (px), ems (em - relative to the parent element's font size), or other units. Example: font-size: 16px; /* Sets the font size to 16 pixels */</li>
+            <li><span>font-weight:</span> This property controls the boldness of the text. Values range from normal (lightest) to 900 (boldest), with 400 typically representing normal weight.</li>
+            <li><span>font-style:</span> This property sets the style of the text, allowing you to make it italic or oblique.</li>
+            <li><span>color:</span> This property defines the color of the text itself. Values can be keywords like red, blue, hexadecimal color codes (#ff0000 for red), or RGB values (rgb(255, 0, 0) for red).</li>
+        </ul>
+
+        <h4>Additional Properties for Text Finesse:</h4>
+
+        <ul>
+            <li>text-decoration: Controls underline, strikethrough, or other decorative lines on text.</li>
+            <li>text-align: Aligns text within its containing element (left, right, center, justify).</li>
+            <li>letter-spacing: Adjusts the spacing between letters in the text.</li>
+            <li>line-height: Sets the spacing between lines of text, affecting readability.</li>
+            <li>font-variant: Offers features like small caps or stylistic alternates for certain fonts.</li>
+        </ul>
+
+        <h4>Using Font Properties Effectively:</h4>
+        <p>By combining these font properties, you can create a visually appealing and well-structured typography for your webpage content. Consider factors like readability, hierarchy (headings vs. body text), and overall design aesthetic when choosing your font styles. Remember, a well-chosen font can significantly enhance the user experience of your website.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>List Properties</li>
+        </h3>
+
+        <p>In CSS, list properties help you style unordered lists (bulleted lists) and ordered lists (numbered lists) on your webpage. They allow you to customize the appearance of the list items and their markers (bullets or numbers).</p>
+
+        <h4>Here's a breakdown of the key list properties:</h4>
+
+        <h4>1. list-style-type:</h4>
+        <p>This property defines the marker type used for the list items. It can take various values:</p>
+
+        <ul>
+            <li>disc (default): Creates standard round bullets.</li>
+            <li>circle: Creates circular bullets.</li>
+            <li>square: Creates square bullets.</li>
+            <li>none: Removes any markers from the list items.</li>
+            <li>You can also use image URLs to create custom bullet images.</li>
+        </ul>
+
+        <h4>2. list-style-position:</h4>
+        <p>This property specifies the position of the marker relative to the list item content. It can take two values:</p>
+
+        <ul>
+            <li>inside (default): Positions the marker within the content area of the list item.</li>
+            <li>outside: Positions the marker outside the content area, often slightly to the left.</li>
+        </ul>
+
+        <h4>3. list-style-image:</h4>
+        <p>This property allows you to define a custom image to be used as the marker instead of the default bullets or numbers. You specify the URL of the image file.</p>
+
+        <h4>4. list-style:</h4>
+        <p>This is a shorthand property that combines the above three properties into a single declaration for efficiency. You can set all three values (type, position, image) in a single line of code.</p>
+
+        <h4>Here's an example of using list properties:</h4>
+        <pre>
+            <code>
+                ul {
+                    list-style-type: square;  /* Sets square bullets for all list items */
+                    list-style-position: outside;  /* Positions the squares slightly outside */
+                    margin-left: 20px;  /* Adds some spacing to the left of the list */
+                }
+            </code>
+        </pre>
+        
+
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Text Alignment</li>
+        </h3>
+
+        <p>In CSS, text-alignment refers to the horizontal positioning of text content within its containing element. It's a crucial property for arranging text blocks, headings, paragraphs, and other elements to achieve a clean and organized layout on your webpage.</p>
+
+        <h4>Here's a breakdown of the main text-alignment values:</h4>
+
+        <ul>
+            <li><span>Left (default):</span> This aligns the text to the left margin of the containing element. This is the most common alignment for body text in Western languages that read left to right.
+            </li>
+            <li><span>Right:</span>This aligns the text to the right margin of the containing element. It's often used for short elements like pull quotes or captions placed on the right side of the webpage.</li>
+
+            <li><span>Center:</span> This centers the text horizontally within the containing element. It can be useful for headings or short blocks of text that you want to stand out and be centered on the page.</li>
+
+            <li><span>Justify:</span> This justifies the text, aligning both the left and right edges of the text block with the margins of the container. This creates a flush left and right margin, similar to how text is aligned in newspapers or justified text editors.</li>
+        </ul>
+
+        <h4>Applying Text Alignment:</h4>
+
+        <p>You can apply text alignment using the text-align property within your CSS rules. Here are some examples:</p>
+        <pre>
+            <code>
+                h1 {
+                    text-align: center;  /* Centers all heading elements (h1) */
+                }
+        
+                .pull-quote {
+                    text-align: right;  /* Aligns the content with class "pull-quote" to the right */
+                }
+        
+                p {
+                    text-align: justify;  /* Justifies all paragraph text */
+                }
+            </code>
+        </pre>
+        
+        <h4>Choosing the Right Alignment:</h4>
+        <p>The choice of text alignment depends on the content and overall design of your webpage. Here are some general guidelines:</p>
+
+        <ul>
+            <li>Left alignment is ideal for body text in most left-to-right languages as it promotes readability.</li>
+            <li>Center alignment can be used for headings, titles, or short blocks of text to emphasize them.</li>
+            <li>Right alignment is less common but can be used for specific design elements or content in right-to-left languages.</li>
+            <li>Justified alignment should be used with caution as it can create uneven spacing between words, potentially reducing readability. It's generally better for short text blocks.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Color</li>
+        </h3>
+
+        <p>Colors are a fundamental aspect of visual design, and CSS provides multiple ways to represent and use colors in your webpages. Here's a breakdown of different color properties and methods in CSS:</p>
+
+        <h4>Specifying Colors:</h4>
+        <ul>
+            <li><span>Color Keywords:</span> Basic color names like red, green, blue, yellow, purple, etc., are a convenient way to define colors. However, they may not always provide the exact shade you desire.</li>
+
+            <li><span>Hexadecimal Codes:</span> These codes start with a hash symbol (#) followed by six hexadecimal digits (0-9 and A-F) representing the red, green, and blue components of the color. For example, #ff0000 is pure red, #00ff00 is pure green, and #ffffff is white. Hex codes offer more precise color control.</li>
+
+            <li><span>RGB Values:</span> RGB stands for Red, Green, Blue. You can define colors using a combination of these values within a functional notation rgb(red, green, blue). Each value ranges from 0 (minimum intensity) to 255 (maximum intensity). For instance, rgb(255, 0, 0) is red, and rgb(0, 0, 255) is blue.</li>
+
+            <li><span>HSL Values:</span> HSL stands for Hue, Saturation, Lightness. This method defines colors based on hue (color angle), saturation (amount of color), and lightness (brightness). It can be useful for intuitive color adjustments.</li>
+        </ul>
+
+        <h4>Using Colors in CSS:</h4>
+        <p>The color property is the most common way to apply color to text elements in CSS. You can set the color of headings, paragraphs, links, and other elements using this property. Here's an example:</p>
+        <pre>
+            <code>
+                h1 {
+                    color: #333;  /* Sets the heading color to a dark gray using a hex code */
+                }
+        
+                a {
+                    color: blue;  /* Sets the link color to blue using a color keyword */
+                }
+            </code>
+        </pre>
+        
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Box Model and Text Flow:</li>
+        </h3>
+
+        <p>The CSS box model and text flow are fundamental concepts for understanding how webpage content is laid out and styled.</p>
+
+        <h4>The CSS Box Model:</h4>
+        <p>Imagine each element on your webpage as a rectangular box. The box model defines the structure of this box, including its different components:</p>
+
+        <ul>
+            <li><span>Content:</span> This is the actual content of the element, like text, images, or videos.</li>
+            <li><span>Padding:</span> This is the space between the content and the element's border. You can control the padding using the padding property in CSS.</li>
+            <li><span>Border:</span> This is the line around the element's content and padding. You can control the border style, width, and color using CSS properties like border-style, border-width, and border-color.</li>
+            <li><span>Margin:</span> This is the space outside the border of the element. It defines the outer spacing of the element relative to other elements on the page. You can control the margin using the margin property in CSS.</li>
+        </ul>
+
+        <p>The total width and height of an element are determined by the sum of its content width, padding, border width, and margin. By manipulating these properties, you can control the size, spacing, and overall layout of elements on your webpage.</p>
+
+        <h4>Text Flow:</h4>
+        <p>Text flow refers to how text wraps and behaves within its containing element. Here are some key aspects of text flow:</p>
+
+        <ul>
+            <li><span>Line Breaking:</span> When text reaches the end of the line in its container, it breaks and continues on the next line. CSS properties like white-space can control how line breaks occur (e.g., at word boundaries or allowing hyphenation).</li>
+
+            <li><span>Text Wrapping:</span> Text can wrap around other elements on the page, like images. CSS properties like float and position can be used to control how text wraps around these elements.</li>
+
+            <li><span>Text Direction:</span> Text flow is typically left-to-right in Western languages. However, CSS allows you to specify the text direction for right-to-left languages or special cases using the direction property.</li>
+        </ul>
+
+        <h4>The Relationship Between Box Model and Text Flow:</h4>
+        <p>The box model defines the container for the text, while text flow governs how the text behaves within that container. They work together to create the visual presentation of text on your webpage. For example, the width of the content area in the box model determines how many characters can fit on a single line before wrapping occurs in the text flow.</p>
+        <p>By understanding both the box model and text flow, you can achieve precise control over the layout and presentation of text content on your webpages. This ensures a well-structured and readable experience for your users.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Background images</li>
+        </h3>
+
+        <p>Background images are a powerful tool in CSS for adding visual interest, branding elements, and creating depth to your webpages. Here's a breakdown of using background images in CSS:</p>
+
+        <h4>Setting Background Images:</h4>
+        <p>The background-image property is the core for applying background images to elements. You specify the image path or URL within the property value. Here's the basic syntax:</p>
+        <pre>
+            <code>
+                selector {
+                    background-image: url("path/to/your/image.jpg"); /* Sets background image for the selector */
+                }
+            </code>
+        </pre>
+        
+        <h4>Positioning and Repeat:</h4>
+        <p>By default, background images are placed in the top-left corner of the element. You can use the background-position property to control their placement within the element's content area. It accepts values like top left, center center, or percentages to position the image precisely.</p>
+
+        <p>The background-repeat property controls how the image is repeated if it doesn't fill the entire element. Options include repeat (repeats the image both horizontally and vertically), repeat-x (repeats horizontally only), repeat-y (repeats vertically only), no-repeat (displays the image once), and space-around, space-between, or round for specific arrangements with empty space.</p>
+
+        <h4>Here's an example with positioning and repeat:</h4>
+        <pre>
+            <code>
+                body {
+                    background-image: url("bg-pattern.png"); /* Sets background image for the body */
+                    background-position: center center; /* Centers the image */
+                    background-repeat: repeat; /* Repeats the pattern if needed */
+                }
+            </code>
+        </pre>
+        
+        <h4>Additional Properties:</h4>
+        <ul>
+            <li>background-size: Controls the size of the background image. You can set it to a specific size (e.g., 100px 200px) or use keywords like cover (scales the image to fill the container) or contain (scales the image to fit without cropping).</li>
+            <li>background-color: Sets a background color for the element. This color shows through if the image doesn't fill the entire area or for decorative purposes behind the image.</li>
+            <li>background-attachment: Controls how the background image scrolls when the user scrolls the webpage. Options include scroll (moves with the content), fixed (stays fixed in position), and local (scrolls with the element itself).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>&lt;span&gt; and &lt;div&gt; tags</li>
+        </h3>
+
+        <p>Both &lt;span&gt; and &lt;div&gt; tags are essential building blocks for structuring and styling content in HTML, but they serve different purposes:</p>
+
+        <h4>The &lt;span&gt; tag:</h4>
+        <ul>
+            <li>Represents a generic inline container. It doesn't introduce a new line break and only occupies the horizontal space needed for its content.</li>
+            <li>Primarily used for inline styling. You can apply styles like font changes, color modifications, or highlighting to a specific portion of text within a paragraph or other element.</li>
+            <li>Doesn't have any semantic meaning. It's a generic placeholder for applying styles without affecting the document structure.</li>
+            <li>Example:</li>
+            <pre>
+                <code>
+                    &lt;p&gt;This is a paragraph with a &lt;span style=&quot;color: red;&quot;&gt;highlighted part&lt;/span&gt;.&lt;/p&gt;
+                </code>
+            </pre>
+            
+        </ul>
+
+        <h4>The &lt;div&gt; tag:</h4>
+        <ul>
+            <li>Represents a block-level element. It starts on a new line and takes up the full available horizontal width by default.</li>
+            <li>Used for structuring and grouping content. You can create sections, headers, navigation bars, or any other logical content blocks using &lt;div&gt; tags.</li>
+            <li>Can have semantic meaning. By adding classes or IDs to <div> tags, you can associate them with specific content types (e.g., &lt;div class="article"&gt; for an article section).</li>
+            <li>Example:</li>
+            <pre>
+                <code>
+                    &lt;div class=&quot;container&quot;&gt;
+                        &lt;h1&gt;This is a heading&lt;/h1&gt;
+                        &lt;p&gt;This is some content within the container.&lt;/p&gt;
+                    &lt;/div&gt;
+                </code>
+            </pre>
+            
+        </ul>
+
+        <h4>Choosing the Right Tag:</h4>
+        <ul>
+            <li>Use &lt;span&gt; when you want to style a specific portion of text inline without affecting the document structure.</li>
+            <li>Use &lt;div&gt; when you need to create a new section, group content blocks, or define a semantic area within your webpage.</li>
+        </ul>
+        <p>In essence, <span> is for inline styling, while <div> is for content grouping and structure. By understanding these distinctions, you can effectively use both tags to create well-organized and visually appealing HTML content.</p>
+    </div>
+
+    <div class="section">
+        <h3>
+            <li>Conflict resolution</li>
+        </h3>
+
+        <p>Conflict resolution is the process of finding a peaceful solution to a disagreement or dispute. It involves effectively communicating, understanding different perspectives, and working towards a mutually agreeable outcome. Here are some key aspects of conflict resolution:</p>
+
+        <ul>
+            <h4>Common Causes of Conflicts: </h4>
+            <li><span>Differing opinions or goals:</span> People may have different viewpoints, priorities, or desired outcomes, leading to conflict.</li>
+            <li><span>Miscommunication:</span> When messages are unclear, misinterpreted, or not delivered effectively, it can create misunderstandings and conflict.</li>
+
+            <li><span>Competition for resources:</span> Limited resources like time, money, or recognition can lead to competition and conflict between individuals or teams.</li>
+            <li><span>Personality clashes:</span> People with different personalities or communication styles may find it challenging to work together, potentially leading to conflict.</li>
+
+            <h4>Effective Conflict Resolution Strategies:</h4>
+
+            <li><span>Active listening:</span> Pay close attention to the other person's perspective, validate their feelings, and avoid interrupting.</li>
+            <li><span>Clear communication:</span> Express your own perspective calmly and clearly, focusing on the issue at hand rather than personal attacks.</li>
+
+            <li><span>Problem-solving:</span> Brainstorm potential solutions together, considering everyone's needs and interests. This fosters collaboration and increases the chance of finding an acceptable solution.</li>
+
+            <li><span>Compromise:</span> Be willing to find a middle ground where both parties make some concessions.</li>
+
+            <h4>Remember:</h4>
+
+            <li>Focus on the issue, not the person: Address the specific problem rather than resorting to personal attacks or blame games.</li>
+            <li>Maintain respect: Treat each other with respect, even when you disagree.</li>
+            <li>Be willing to compromise: Finding a solution may require some flexibility from everyone involved.</li>
+            <li>Focus on the future: Aim to find a solution that will move forward and prevent similar conflicts in the future.</li>
+
+        </ul>
+        <p>By understanding these concepts and implementing effective conflict resolution strategies, you can navigate disagreements constructively and build stronger relationships in your personal and professional life.</p>
+    </div>
+</body>
+
+</html>

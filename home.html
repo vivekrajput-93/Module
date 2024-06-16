@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BITS Pilani WIMS 2021 </title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href="./images/bits.png" />
+    <script>
+        // Function to load module content
+        function loadModule(moduleId) {
+            // Determine which module to load
+            var moduleFile = `module${moduleId}.html`;
+
+            // Fetch content from moduleX.html using fetch API or any method you prefer
+            fetch(moduleFile)
+                .then(response => response.text())
+                .then(data => {
+                    // Update the content area with the fetched data
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => console.error('Error fetching module:', error));
+        }
+
+        // Initial load of module 1 content
+        window.onload = function() {
+            loadModule(1);
+        };
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <img src="./images/bits.png" alt="main-logo">
+        <span>BITS Pilani WIMS 2021 </span>
+        <span>Web Technologies Course
+        </span>
+
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="loadModule(1)">Module 1</a></li>
+                <li><a href="#" onclick="loadModule(2)">Module 2</a></li>
+                <li><a href="#" onclick="loadModule(3)">Module 3</a></li>
+                <li><a href="#" onclick="loadModule(4)">Module 4</a></li>
+                <li><a href="#" onclick="loadModule(5)">Module 5</a></li>
+                <li><a href="#" onclick="loadModule(6)">Module 6</a></li>
+                <li><a href="#" onclick="loadModule(7)">Module 7</a></li>
+                <li><a href="#" onclick="loadModule(8)">Module 8</a></li>
+                <li><a href="#" onclick="loadModule(9)">Module 9</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <!-- Content area will be populated dynamically -->
+        </div>
+    </div>
+    <div class="footer">
+        Website designed by Ravindranath Singh  &  2021WA86392
+    </div>
+</body>
+
+</html>
